@@ -7,7 +7,7 @@
 
     class contact extends ModuleObject {
 
-        var $skin = "xe_contact"; ///< skin name
+        var $skin = "xe_contact_official"; ///< skin name
 
         /**
          * @brief module installation
