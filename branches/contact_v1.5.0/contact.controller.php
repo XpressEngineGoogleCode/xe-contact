@@ -72,7 +72,8 @@ class contactController extends contact {
 		$mail_content['Comments'] = htmlspecialchars($obj->comment);
 
 		$oMail->setContent(htmlspecialchars($content_all));
-		$oMail->setSender("XE Contact Us", $obj->email);
+		//$oMail->setSender("XE Contact Us", $obj->email);
+		$oMail->setSender($obj->email, $obj->email);
 
 		$target_mail = explode(',',$this->module_info->admin_mail);
 
@@ -98,6 +99,7 @@ class contactController extends contact {
 			}
 			$oMail->send();
 		}
+
 
 		if(isset($_SESSION['mail_content']))
 			unset($_SESSION['mail_content']);
