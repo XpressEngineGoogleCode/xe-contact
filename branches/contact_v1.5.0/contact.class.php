@@ -28,6 +28,10 @@
         function checkUpdate() {
             $oModuleModel = &getModel('module');
 			if(!$oModuleModel->getTrigger('member.getMemberMenu', 'contact', 'controller', 'triggerMemberMenu', 'after')) return true;
+
+			// 2012. 09. 11 when add new menu in sitemap, custom menu add
+			if(!$oModuleModel->getTrigger('menu.getModuleListInSitemap', 'contact', 'model', 'triggerModuleListInSitemap', 'after')) return true;
+
             return false;
         }
 
@@ -41,6 +45,9 @@
 			if(!$oModuleModel->getTrigger('member.getMemberMenu', 'contact', 'controller', 'triggerMemberMenu', 'after'))
                 $oModuleController->insertTrigger('member.getMemberMenu', 'contact', 'controller', 'triggerMemberMenu', 'after');
 
+			// 2012. 09. 11 when add new menu in sitemap, custom menu add
+			if(!$oModuleModel->getTrigger('menu.getModuleListInSitemap', 'contact', 'model', 'triggerModuleListInSitemap', 'after'))
+				$oModuleController->insertTrigger('menu.getModuleListInSitemap', 'contact', 'model', 'triggerModuleListInSitemap', 'after');
             return new Object(0, 'success_updated');
         }
 
