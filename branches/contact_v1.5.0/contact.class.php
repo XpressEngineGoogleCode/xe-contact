@@ -18,6 +18,7 @@
             $oModuleModel = &getModel('module');
 
 			$oModuleController->insertTrigger('member.getMemberMenu', 'contact', 'controller', 'triggerMemberMenu', 'after');
+			$oModuleController->insertTrigger('member.getModuleListInSitemap', 'contact', 'model', 'triggerModuleListInSitemap', 'after');
 
             return new Object();
         }
