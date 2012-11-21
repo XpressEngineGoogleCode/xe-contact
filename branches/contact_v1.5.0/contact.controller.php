@@ -18,8 +18,8 @@ class contactController extends contact {
 	 **/
 	function procContactSendEmail(){
 		$logged_info = Context::get('logged_info');
-		/*if(!$logged_info)
-			return new Object(-1, 'Only logged user can send an email.');*/
+		if($this->module_info->send_grant_all != 'Y' && !$logged_info)
+			return new Object(-1, 'Only logged user can send an email.');
 
 		$oMail = new Mail();
 

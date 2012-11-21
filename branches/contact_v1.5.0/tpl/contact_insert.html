@@ -82,6 +82,14 @@
 			</td>
 		</tr>
 		<tr>
+			<th scope="col"><div>{$lang->grant}</div></th>
+			<td>
+				<input type="radio" name="send_grant_all" value="Y" checked="checked"|cond="$module_info->send_grant_all== 'Y'" /> {$lang->grant_to_all}
+				<input type="radio" name="send_grant_all" value="N" checked="checked"|cond="$module_info->send_grant_all!= 'Y'" /> {$lang->grant_to_login_user}
+				<p>{$lang->about_interval}</p>
+			</td>
+		</tr>
+		<tr>
 			<th scope="row"><div>{$lang->description}</div></th>
 			<td>
 				<textarea name="description" class="inputTypeTextArea fullWidth" style="width:60%;height:100px">{htmlspecialchars($module_info->description)}</textarea>
